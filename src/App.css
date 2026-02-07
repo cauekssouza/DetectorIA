@@ -1,38 +1,33 @@
-.App {
-  text-align: center;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@layer components {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 shadow-lg rounded-lg p-6;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .tabs {
+    @apply flex justify-around;
   }
-  to {
-    transform: rotate(360deg);
+
+  .tabs button {
+    @apply px-4 py-2 rounded-md bg-secondary text-foreground hover:bg-primary hover:text-background transition;
+  }
+
+  .tabs button.active {
+    @apply bg-primary text-background;
+  }
+
+  textarea, input[type="file"] {
+    @apply w-full p-2 rounded-md border border-input bg-card text-foreground;
+  }
+
+  .btn {
+    @apply w-full py-2 px-4 mt-4 rounded-md font-semibold text-background bg-primary hover:bg-accent transition;
+  }
+
+  .resultado {
+    @apply mt-4 font-bold text-center;
   }
 }
